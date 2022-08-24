@@ -1,10 +1,11 @@
 import React from 'react'
+import { Outlet } from "react-router-dom"
 
 const Main = () => {
   return (
-    <div>
-      
-    </div>
+    <main className='Main'>
+      <Outlet/>
+    </main>
   )
 }
 
