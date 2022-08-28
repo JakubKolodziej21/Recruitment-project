@@ -2,36 +2,84 @@ import React, { useState, useEffect } from "react";
 import $ from "jquery";
 
 import properties from "../Config/Properties";
+import { Container } from "react-bootstrap";
 
 const ListOfProducts = () => {
-  const [data, setData] = useState([]);
+  const [listofproducts, setListofproducts] = useState([]);
   useEffect(() => {
     $.ajax({
-      url: "https://newdemostock.gopos.pl/api/219/productsproducts?page=0&size=0&sort[empty]=true&sort[sorted]=true&sort[unsorted]=true&search=string&name=string&description=string&sku=string&custom_id=string&barcode=string&statuses=ENABLED&categories=0&ids=0&products_in_recipe=0&sale_price=0&product_type=BASIC&measure_type=sztuka&include=string",
-      // "https://" +
-      // properties.host +
-      // "/api/" +
-      // properties.organizationId +
-      // properties.link
+      url: "https://newdemostock.gopos.pl/ajax/219/products",
       method: "GET",
       timeout: 0,
       headers: {
-        Authorization: "Bearer fd9ba9e1-0788-4e8f-ac46-a43df43e205e",
-        Accept: "application/json",
-        "content-type": "text/html;charset=utf-8",
+        Authorization: "fd9ba9e1-0788-4e8f-ac46-a43df43e205e",
+        Accept: "*/*",
+        Connection: "keep-alive",
+        Cookie: "JSESSIONID=8940F5B719FDE1881D3BA15997C79F5D",
       },
-
       success: (data) => {
         console.log("success", data);
+        setListofproducts(data.data);
       },
       error: (data) => {
         console.log("error", data);
       },
     });
   }, []);
+
+  const [listofcategories, setListOfCategories] = useState([]);
+  useEffect(() => {
+    $.ajax({
+      url: "https://newdemostock.gopos.pl/ajax/219/product_categories",
+      method: "GET",
+      timeout: 0,
+      headers: {
+        Authorization: "fd9ba9e1-0788-4e8f-ac46-a43df43e205e",
+        Accept: "*/*",
+        Connection: "keep-alive",
+        Cookie: "JSESSIONID=8940F5B719FDE1881D3BA15997C79F5D",
+      },
+      success: (data) => {
+        console.log("success", data);
+        setListOfCategories(data.data);
+      },
+      error: (data) => {
+        console.log("error", data);
+      },
+    });
+  }, []);
+
+  // id   i    category_id
+  const getCategoryName = () => {
+    if (listofcategories) {
+    }
+  };
+
   return (
-    <div>
-      <h1>List of products</h1>
+    <div className="container">
+      <div className="space">
+        
+        <div className="symbol">&#9751;</div>
+      </div>
+
+      <h1>Lista produktów</h1>
+      {console.log(listofproducts)}
+      <table>
+        <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Kategoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listofproducts.map((item, i) => (
+            <tr key={i}>
+              <td>{item.name}</td>
+              <td>{item.category_id}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
