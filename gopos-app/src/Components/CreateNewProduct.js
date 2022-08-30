@@ -1,49 +1,50 @@
 import React, { useState } from "react";
+import useCreateNewProduct from "./useCreateNewProduct";
+import CreatableSelect from "react-select/creatable";
 
-const CreateNewProduct = () => {
-  const NewProduct = () => {
-    alert("Hej");
-  };
+const CreateNewProduct = (submitForm) => {
+	const {
+		valuesP,
+		handleChangeP,
+		handleSubmitP,
+		categoryList,
+		handleCategory,
+		valuesK,
+		handleChangeK,
+		handleSubmitK,
+	} = useCreateNewProduct(submitForm);
 
-  const [values, setValues] = useState({
-    nameofproduct: "Ford Focus",
-  });
+	return (
+		<div className='container'>
+			<div className='space'>
+				<div className='symbol'>&#9881;</div>
+			</div>
+			<h1>Stwórz Produkt & Kategorię</h1>
+			<input
+				onChange={handleChangeP}
+				type='text'
+				value={valuesP.nameP}
+				name='nameP'
+				placeholder='Podaj nazwę nowego produktu'
+			/>
+			<CreatableSelect
+				isClearable
+				onChange={handleCategory}
+				options={categoryList}
+			/>
+			<button onClick={handleSubmitP}>Utwórz</button>
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
-
-  return (
-    <div className="container">
-      <div className="space">
-      <div className="symbol">&#9881;</div></div>
-      <h1>Stwórz Produkt & Kategorię</h1>
-      <input
-        onChange={handleChange}
-        type="text"
-        value={values.nameofproduct}
-        name="nameofproduct"
-        placeholder="Podaj nazwę nowego produktu"
-      />
-      <input type="select"></input>
-      <button onClick={NewProduct}>Utwórz</button>
-
-
-      <h2>Wprowadź kategorię</h2>
-      <input
-        onChange={handleChange}
-        type="text"
-        value={values.nameofproduct}
-        name="nameofcategory"
-        placeholder="Podaj nazwę nowej kategorii"
-      />
-      <button onClick={NewProduct}>Utwórz</button>
-    </div>
-  );
+			<h2>Wprowadź kategorię</h2>
+			<input
+				onChange={handleChangeK}
+				type='text'
+				value={valuesK.nameK}
+				name='nameK'
+				placeholder='Podaj nazwę nowej kategorii'
+			/>
+			<button onClick={handleSubmitK}>Utwórz</button>
+		</div>
+	);
 };
 
 export default CreateNewProduct;

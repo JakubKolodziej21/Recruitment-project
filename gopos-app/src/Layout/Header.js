@@ -9,17 +9,11 @@ const Header = () => {
         <img alt="logo" src={logo} height="90px" />
       </div>
       <nav className="nav">
-        <Link to="Page1" className="button">
+        <Link to="/" className="button">
           Lista produktów
         </Link>
-        <Link to="Page2" className="button">
+        <Link to="Cateories" className="button">
           Lista kategorii
-        </Link>
-        <Link to="Page3" className="button">
-          Edycja produktów
-        </Link>
-        <Link to="Page4" className="button">
-          Edycja kategorii
         </Link>
         <Link to="Page5" className="button">
           Tworzenie nowego produktu i kategorii

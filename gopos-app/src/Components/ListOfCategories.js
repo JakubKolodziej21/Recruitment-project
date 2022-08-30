@@ -33,9 +33,7 @@ const ListOfCategories = () => {
       {console.log(listofcategories)}
       <table>
         <thead>
-          <tr>
-            <th>Nazwa</th>
-          </tr>
+         
         </thead>
         <tbody>
           {listofcategories.map((item, i) => (
