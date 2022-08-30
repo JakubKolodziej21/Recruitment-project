@@ -23,6 +23,18 @@ const EditListOfProduct = (submitForm) => {
 				placeholder='Podaj nazwę nowego produktu'
 			/>
 			<CreatableSelect
+			theme={(theme) => ({
+				...theme,
+				borderRadius: 0,
+				
+	  
+				colors: {
+				  ...theme.colors,
+				  primary25: "#1a86e0",
+				  primary: "#434e5e",
+				  color: "black",
+				},
+			  })}
 				isClearable
 				onChange={handleCategory}
 				options={categoryList}
