@@ -51,9 +51,8 @@
           }
         }
         .nav {
-          width: 15%;
-          min-width: 400px;
-          // max-width: 100px;
+          width: 25%;
+          min-width: 20em;
           height: 100%;
           display: flex;
           justify-content: space-between;
@@ -89,16 +88,18 @@
       min-height: 500px;
       border-radius: 20px;
       padding: 10px;
-      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
 
-      
-      .space{
+      .space {
         width: 100%;
         text-align: center;
         justify-content: center;
-          display:flex ;
-          flex-direction: row;
-          background-color: white;  
+        display: flex;
+        flex-direction: row;
+        background-color: white;
 
         .symbol {
           background-color: #1f7cc8;
@@ -114,10 +115,6 @@
           left: auto;
           right: auto;
         }
-
-
-
-
       }
 
       h1 {
@@ -135,6 +132,15 @@
         align-items: center;
         justify-content: center;
       }
+
+      .thin_table {
+        width: 25%;
+        align-items: center;
+        justify-content: center;
+        margin-left: -20px;
+        margin-right: 0;
+      }
+
       tr {
         font-size: x-large;
       }
@@ -147,29 +153,60 @@
         color: #434e5e;
         font-size: larger;
       }
-      button{
-        color:white;
+
+.category_column{
+  p{
+  padding: 5px;
+  text-shadow:1px 1px #1a86e0;
+  }
+}
+
+      button {
+        color: white;
         background-color: #1a86e0;
         border: #1a86e0 1px solid;
         padding: 10px;
         font-size: medium;
         border-radius: 10%;
-        margin :5px;
+        margin: 5px;
 
-        &:hover{
+        &:hover {
           background-color: #1f7cc8;
           cursor: pointer;
         }
       }
-    
-    input{
-      font-size:medium;
-      margin:5px;
-      padding: 10px;
-      background-color: white;
-      border: #1a86e0 1px solid;
-    }
-    
+
+      input {
+        font-size: medium;
+        margin: 5px;
+        padding: 10px;
+        background-color: white;
+        border: #1a86e0 1px solid;
+        width: 300px;
+      }
+
+      .css-qc6sy-singleValue{
+        background-color: white;
+      }
+
+      .css-x19aeh-control,.css-knwiki-control {
+        width: 300px;
+       
+        &:focus {
+          width: 300px;
+        }
+      }
+
+      .css-6j8wv5-Input,
+      .css-x19aeh-control {
+        color: #1a86e0;
+      }
+
+      h2 {
+        background-color: white;
+        color: #818385;
+        margin-top: 1em;
+      }
     }
 
     .footer {
