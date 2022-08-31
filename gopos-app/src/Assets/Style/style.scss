@@ -154,13 +154,13 @@
         font-size: larger;
       }
 
-.category_column{
-  p{
-  padding: 5px;
-  text-shadow:1px 1px #1a86e0;
-  background-color: white;
-  }
-}
+      .category_column {
+        p {
+          padding: 5px;
+          text-shadow: 1px 1px #1a86e0;
+          background-color: white;
+        }
+      }
 
       button {
         color: white;
@@ -186,13 +186,14 @@
         width: 300px;
       }
 
-      .css-qc6sy-singleValue{
+      .css-qc6sy-singleValue {
         background-color: white;
       }
 
-      .css-x19aeh-control,.css-knwiki-control {
+      .css-x19aeh-control,
+      .css-knwiki-control {
         width: 300px;
-       
+
         &:focus {
           width: 300px;
         }

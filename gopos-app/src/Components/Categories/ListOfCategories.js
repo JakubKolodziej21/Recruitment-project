@@ -17,8 +17,6 @@ const ListOfCategories = (submitForm) => {
           <tr>
             <th>Nazwa</th>
             <th>Akcja</th>
-
-			
           </tr>
         </thead>
         <tbody>

@@ -1,12 +1,12 @@
-import React from 'react'
-import { Outlet } from "react-router-dom"
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
-    <main className='Main'>
-      <Outlet/>
+    <main className="Main">
+      <Outlet />
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

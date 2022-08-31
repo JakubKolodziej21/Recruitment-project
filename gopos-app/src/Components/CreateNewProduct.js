@@ -32,7 +32,6 @@ const CreateNewProduct = (submitForm) => {
         theme={(theme) => ({
           ...theme,
           borderRadius: 0,
-          
 
           colors: {
             ...theme.colors,
